@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
+require './lib/daily_movie_suggestions'
+
 DailyMovieSuggestions::CLI.new.call
