@@ -12,9 +12,17 @@ class DailyMovieSuggestions::CLI
     puts "1) Movie One, 2) Movie Two, 3) Movie Three"
   end
 
+  def menu
+    menu = puts "Command Menu:"
+    puts "- Enter the number of the movie you would like more information about (1, 2, or 3)"
+    puts "- Enter list again to view the list again"
+    puts "- Enter exit to leave"
+    puts menu
+  end
+
   def movie_details
-    puts "Enter the number of the movie you would like more information about or type exit:"
-    #get further information about selected movie from site
+     menu
+     
     input = nil
     while input != "exit"
       input = gets.strip
