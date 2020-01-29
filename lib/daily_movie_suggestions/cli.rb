@@ -22,7 +22,7 @@ class DailyMovieSuggestions::CLI
 
   def movie_details
      menu
-     
+
     input = nil
     while input != "exit"
       input = gets.strip
@@ -34,6 +34,11 @@ class DailyMovieSuggestions::CLI
         puts "Movie Two Info"
       when "3"
         puts "Movie Three Info"
+      when "list again"
+        list_movies
+      else #need to fix - when typing exit the else statement is returned, then the exit statement is returned.
+        puts "I'm not sure what you mean by that. Please enter a valid command from the menu."
+        menu
       end
     end
   end
