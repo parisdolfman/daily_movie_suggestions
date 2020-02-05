@@ -36,7 +36,11 @@ class DailyMovieSuggestions::CLI
         puts "Movie Three Info"
       when "list again"
         list_movies
-      else #need to fix - when typing exit the else statement is returned, then the exit statement is returned.
+      #if input != "1" && input != "2" && input != "3" && input != "list again" && input != "exit"  #need to fix - when typing exit the else statement is returned, then the exit statement is returned.
+      #  puts "I'm not sure what you mean by that. Please enter a valid command from the menu."
+      #  menu
+      end
+      if input != "1" && input != "2" && input != "3" && input != "list again" && input != "exit"  #need to fix - when typing exit the else statement is returned, then the exit statement is returned.
         puts "I'm not sure what you mean by that. Please enter a valid command from the menu."
         menu
       end
