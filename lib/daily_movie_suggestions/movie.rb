@@ -14,7 +14,7 @@ def initialize(title, year, rating, url)
 end
 
 def doc
-  doc = Nokogiri::HTML(open("https://www.rottentomatoes.com/top/bestofrt/"))
+  @doc = Nokogiri::HTML(open(self.url))
 binding.pry
 end
 
