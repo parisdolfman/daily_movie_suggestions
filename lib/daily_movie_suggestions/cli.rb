@@ -10,6 +10,7 @@ class DailyMovieSuggestions::CLI
     puts "Here are your movie suggestions for today:"
     #get movies from site with best movies
     puts "1) Movie One, 2) Movie Two, 3) Movie Three"
+    @all = DailyMovieSuggestions::Movie.all
   end
 
   def menu

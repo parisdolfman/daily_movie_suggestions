@@ -5,6 +5,10 @@ attr_accessor :title, :year, :rating, :url
 
 @@all = []
 
+def self.all
+  @@all
+end
+
 def initialize(title, year, rating, url)
   @title = title
   @year = year
