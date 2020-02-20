@@ -11,6 +11,9 @@ class DailyMovieSuggestions::CLI
     #get movies from site with best movies
     #puts "1) Movie One, 2) Movie Two, 3) Movie Three"
     @movies = DailyMovieSuggestions::Movie.today
+    @movies.each.with_index(1) do |movie, i|
+      puts "#{i}. #{movie.title} - #{movie.year} - #{movie.rating}"
+    end
   end
 
   def menu
