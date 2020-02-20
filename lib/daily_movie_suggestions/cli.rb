@@ -8,8 +8,6 @@ class DailyMovieSuggestions::CLI
 
   def list_movies
     puts "Here are your movie suggestions for today:"
-    #get movies from site with best movies
-    #puts "1) Movie One, 2) Movie Two, 3) Movie Three"
     @movies = DailyMovieSuggestions::Movie.today
     @movies.each.with_index(1) do |movie, i|
       puts "#{i}. #{movie.title} - #{movie.year} - #{movie.rating}"
@@ -38,20 +36,6 @@ class DailyMovieSuggestions::CLI
       else
         puts "I'm not sure what you mean by that. Please enter a valid command from the menu."
         menu
-      # case input
-      # when "1"
-      #   puts "Movie One Info"
-      # when  "2"
-      #   puts "Movie Two Info"
-      # when "3"
-      #   puts "Movie Three Info"
-      # when "list again"
-      #   list_movies
-      #
-      # end
-      # if input != "1" && input != "2" && input != "3" && input != "list again" && input != "exit"
-      #   puts "I'm not sure what you mean by that. Please enter a valid command from the menu."
-      #   menu
        end
     end
   end
