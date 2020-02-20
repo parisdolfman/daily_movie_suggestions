@@ -9,8 +9,8 @@ class DailyMovieSuggestions::CLI
   def list_movies
     puts "Here are your movie suggestions for today:"
     #get movies from site with best movies
-    puts "1) Movie One, 2) Movie Two, 3) Movie Three"
-    @all = DailyMovieSuggestions::Movie.today
+    #puts "1) Movie One, 2) Movie Two, 3) Movie Three"
+    @movies = DailyMovieSuggestions::Movie.today
   end
 
   def menu
@@ -28,23 +28,28 @@ class DailyMovieSuggestions::CLI
     while input != "exit"
       input = gets.strip
 
-      case input
-      when "1"
-        puts "Movie One Info"
-      when  "2"
-        puts "Movie Two Info"
-      when "3"
-        puts "Movie Three Info"
-      when "list again"
+      if input.to_i > 0
+        puts @movies[input.to_i - 1]
+      elsif input == "list again"
         list_movies
-      #if input != "1" && input != "2" && input != "3" && input != "list again" && input != "exit"  #need to fix - when typing exit the else statement is returned, then the exit statement is returned.
-      #  puts "I'm not sure what you mean by that. Please enter a valid command from the menu."
-      #  menu
-      end
-      if input != "1" && input != "2" && input != "3" && input != "list again" && input != "exit"  #need to fix - when typing exit the else statement is returned, then the exit statement is returned.
+      else
         puts "I'm not sure what you mean by that. Please enter a valid command from the menu."
         menu
-      end
+      # case input
+      # when "1"
+      #   puts "Movie One Info"
+      # when  "2"
+      #   puts "Movie Two Info"
+      # when "3"
+      #   puts "Movie Three Info"
+      # when "list again"
+      #   list_movies
+      #
+      # end
+      # if input != "1" && input != "2" && input != "3" && input != "list again" && input != "exit"
+      #   puts "I'm not sure what you mean by that. Please enter a valid command from the menu."
+      #   menu
+       end
     end
   end
 
