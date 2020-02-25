@@ -1,26 +1,26 @@
-#require 'pry'
 class DailyMovieSuggestions::Movie
 
-attr_accessor :title, :year, :rating, :url
+attr_accessor :title, :rating, :url
 
 @@all = []
 
+
 def self.all
+  @@all << self.today
   @@all
 end
 
 def self.today
-  movie_1 = self.new
-  movie_1.title = "Shawshank Redemption"
-  movie_1.year = "1993"
-  movie_1.rating = "5/5"
+  doc = Nokogiri::HTML(open("https://www.rottentomatoes.com/top/bestofrt/"))
 
-  movie_2 = self.new
-  movie_2.title = "Titanic"
-  movie_2.year = "1995"
-  movie_2.rating = "4/5"
-
-  [movie_1, movie_2]
+  @title = doc.search("table.table a.unstyled.articleLink").text
+  binding.pry
 end
+
+
+def rating
+  @rating = doc.search("table.table span.tMeterScore").text
+end
+
 
 end
