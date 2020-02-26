@@ -12,3 +12,7 @@ Movie Objects have:
 - All method to collect all movies into an array
   - the array will be iterated over to expose the attributes
   - the information within the array should be scraped with Nokogiri from the source page
+
+- First Movie Title: @title = doc.search("table.table a.unstyled.articleLink")[0].text
+- Second Movie Title: @title = doc.search("table.table a.unstyled.articleLink")[1].text
+- Third Movie Title: @title = doc.search("table.table a.unstyled.articleLink")[2].text
