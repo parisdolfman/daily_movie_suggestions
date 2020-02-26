@@ -2,25 +2,29 @@ class DailyMovieSuggestions::Movie
 
 attr_accessor :title, :rating, :url
 
-@@all = []
 
-def self.all
-  @@all << self.today
+def self.today
+  self.scrape_movies
+end
+
+def self.scrape_movies
+  @@all = []
+  @@all << self.scrape_rt
+
   @@all
 end
 
-def self.today
+def self.scrape_rt
   doc = Nokogiri::HTML(open("https://www.rottentomatoes.com/top/bestofrt/"))
 
-  @title = doc.search("table.table a.unstyled.articleLink")[1].text
-  @rating = doc.search("table.table span.tMeterScore")[1].text.split(//).last(3).join
-  binding.pry
-end
+  movie = self.new
+  movie.title = doc.search("table.table a.unstyled.articleLink")[0].text.strip
+  movie.rating = doc.search("table.table span.tMeterScore")[0].text.split(//).last(3).join.strip
 
-
-def rating
-  @rating = doc.search("table.table span.tMeterScore")[1].text
-end
-
+  movie
+#  @title = doc.search("table.table a.unstyled.articleLink")[0].text
+#  @rating = doc.search("table.table span.tMeterScore")[0].text.split(//).last(3).join
+#  binding.pry
+  end
 
 end
