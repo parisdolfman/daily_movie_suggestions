@@ -16,3 +16,7 @@ Movie Objects have:
 - First Movie Title: @title = doc.search("table.table a.unstyled.articleLink")[0].text
 - Second Movie Title: @title = doc.search("table.table a.unstyled.articleLink")[1].text
 - Third Movie Title: @title = doc.search("table.table a.unstyled.articleLink")[2].text
+
+- First Movie Rating: @rating = doc.search("table.table span.tMeterScore")[0].text.split(//).last(3).join
+- Second Movie Rating: @rating = doc.search("table.table span.tMeterScore")[1].text.split(//).last(3).join
+- Third Movie Rating: @rating = doc.search("table.table span.tMeterScore")[2].text.split(//).last(3).join
