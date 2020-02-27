@@ -26,21 +26,30 @@ class DailyMovieSuggestions::CLI
     while input != "exit"
       input = gets.strip
 
-      if input == @number
+      if input.to_i > 0
+      DailyMovieSuggestions::Movie.all
+        @@all.each do |movie|
+          if movie.number == input.to_i
+            puts "#{movie.title}"
+
         #input.to_i > 0
-        puts @title
+        #puts "test"
         #@movies[input.to_i - 1]
       elsif input == "list again"
         list_movies
       else
         puts "I'm not sure what you mean by that. Please enter a valid command from the menu."
         menu
-       end
+      end
+      end
     end
   end
+end
+
 
   def goodbye
     puts "Until next time, goodbye!"
   end
+
 
 end
