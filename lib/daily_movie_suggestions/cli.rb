@@ -26,8 +26,10 @@ class DailyMovieSuggestions::CLI
     while input != "exit"
       input = gets.strip
 
-      if input.to_i > 0
-        puts @movies[input.to_i - 1]
+      if input == @number
+        #input.to_i > 0
+        puts @title
+        #@movies[input.to_i - 1]
       elsif input == "list again"
         list_movies
       else
