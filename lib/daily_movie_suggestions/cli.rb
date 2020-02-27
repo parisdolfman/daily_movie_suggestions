@@ -8,10 +8,7 @@ class DailyMovieSuggestions::CLI
 
   def list_movies
     puts "Here are your movie suggestions for today:"
-    @movies = DailyMovieSuggestions::Movie.today
-    @movies.each.with_index(1) do |movie, i|
-      puts "#{i}. #{@new_movie.title} - #{movie.rating}"
-    end
+    DailyMovieSuggestions::Movie.today
   end
 
   def menu
