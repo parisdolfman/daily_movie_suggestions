@@ -12,7 +12,7 @@ class DailyMovieSuggestions::CLI
 
   def menu
     menu = puts "Command Menu:"
-    puts "- Enter the number of the movie you would like more information about (1, 2, or 3)"
+    puts "- Enter the number of the movie you would like to know the rating for: 1, 2, or 3"
     puts "- Enter list again to view the list again"
     puts "- Enter exit to leave"
     puts menu
@@ -26,6 +26,7 @@ class DailyMovieSuggestions::CLI
       input = gets.strip
 
       if input.to_s == "1" || input.to_s == "2" || input.to_s == "3"
+        #DailyMovieSuggestions::Movie.rating
         puts "test"
 
 
