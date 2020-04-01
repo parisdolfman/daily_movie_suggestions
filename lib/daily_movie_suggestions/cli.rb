@@ -3,7 +3,6 @@ class DailyMovieSuggestions::CLI
   def call
     list_movies
     movie_details
-    goodbye
   end
 
   def list_movies
@@ -26,25 +25,23 @@ class DailyMovieSuggestions::CLI
     while input != "exit"
       input = gets.strip
 
-      if input.to_i > 0
-      DailyMovieSuggestions::Movie.all
-        @@all.each do |movie|
-          if movie.number == input.to_i
-            puts "#{movie.title}"
+      if input.to_s == "1" || input.to_s == "2" || input.to_s == "3"
+        puts "test"
 
-        #input.to_i > 0
-        #puts "test"
-        #@movies[input.to_i - 1]
+
+
       elsif input == "list again"
         list_movies
+      elsif input == "exit"
+        goodbye
       else
         puts "I'm not sure what you mean by that. Please enter a valid command from the menu."
         menu
       end
       end
     end
-  end
-end
+
+
 
 
   def goodbye
