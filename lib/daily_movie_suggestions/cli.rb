@@ -7,7 +7,7 @@ class DailyMovieSuggestions::CLI
 
   def list_movies
     puts "Here are your movie suggestions for today:"
-    DailyMovieSuggestions::Movie.today
+    DailyMovieSuggestions::Scraper.movie_titles
   end
 
   def menu
@@ -26,8 +26,8 @@ class DailyMovieSuggestions::CLI
       input = gets.strip
 
       if input.to_s == "1" || input.to_s == "2" || input.to_s == "3"
-        #DailyMovieSuggestions::Movie.rating
-        puts "test"
+        DailyMovieSuggestions::Scraper.rating
+
 
 
 
