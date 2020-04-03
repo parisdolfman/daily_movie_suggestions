@@ -25,7 +25,7 @@ def self.movie_titles
     @movie_list = doc.search("table.table span.tMeterScore")
     @movie_list.each.with_index(1) do |rating, i|
       @new_movie = DailyMovieSuggestions::Movie.new
-      @new_movie.rating = rating
+      @new_movie.rating = rating.text.strip
        @new_movie.number = i
         if i < 4
         puts "#{@new_movie.number}. #{@new_movie.rating}"
