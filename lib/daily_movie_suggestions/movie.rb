@@ -1,6 +1,6 @@
 class DailyMovieSuggestions::Movie
 
-attr_accessor :title, :rating, :number, :url
+attr_accessor :title, :rating, :number
 
 @@all = []
 
