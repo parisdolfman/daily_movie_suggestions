@@ -9,7 +9,8 @@ def self.movie_info
     @new_movie = DailyMovieSuggestions::Movie.new
         @new_movie.title = movie.css(".unstyled").text.strip
          @new_movie.number = movie.css(".bold").text.strip
-            puts "#{@new_movie.number} #{@new_movie.title}"
+         @new_movie.rating = movie.css(".tMeterScore").text.strip
+            puts "#{@new_movie.number} #{@new_movie.title} #{@new_movie.rating}"
            break if i == 3
            end
          end
