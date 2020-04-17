@@ -16,9 +16,6 @@ def self.rating
     puts "#{movie.number} #{movie.rating}"
   end
 end
-#def save
- #@@all << self
-#end
 
 def self.all
   puts @@all
