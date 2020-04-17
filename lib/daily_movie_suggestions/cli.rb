@@ -29,7 +29,7 @@ class DailyMovieSuggestions::CLI
       input = gets.strip
 
       if input.downcase == "yes"
-        DailyMovieSuggestions::Scraper.rating
+        DailyMovieSuggestions::Movie.rating
       elsif input == "list again"
         list_movies
       elsif input == "exit"
