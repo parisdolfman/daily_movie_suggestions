@@ -9,17 +9,17 @@ def self.movie_info
     @new_movie = DailyMovieSuggestions::Movie.new
         @new_movie.title = movie.css(".unstyled").text.strip
          @new_movie.number = movie.css(".bold").text.strip
-           if i < 4
-           puts "#{@new_movie.number} #{@new_movie.title}"
+            puts "#{@new_movie.number} #{@new_movie.title}"
+           break if i == 3
            end
-           #@new_movie.save
          end
-       end
+
+
+    end
 
 
 
 
-end
 
 
 
