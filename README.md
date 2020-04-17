@@ -1,6 +1,6 @@
 # DailyMovieSuggestions
 
-Daily Movie Suggestions is a CLI gem which provides three movie suggestions and their associated ratings. 
+Daily Movie Suggestions is a CLI gem which provides three movie suggestions and their associated ratings upon request. 
 
 ## Installation
 
