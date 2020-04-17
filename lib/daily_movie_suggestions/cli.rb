@@ -26,9 +26,9 @@ class DailyMovieSuggestions::CLI
 
     input = nil
     while input != "exit"
-      input = gets.strip
+      input = gets.strip.downcase
 
-      if input.downcase == "yes"
+      if input == "yes"
         DailyMovieSuggestions::Movie.rating
       elsif input == "list again"
         list_movies
