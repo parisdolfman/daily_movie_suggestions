@@ -7,7 +7,7 @@ class DailyMovieSuggestions::CLI
 
   def list_movies
     puts "Here are your movie suggestions for today:"
-    DailyMovieSuggestions::Scraper.movie_titles
+    DailyMovieSuggestions::Scraper.movie_info
     puts "          "
     puts "Would you like to view the ratings for these movies?"
   end
