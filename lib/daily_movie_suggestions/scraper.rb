@@ -10,7 +10,7 @@ def self.movie_info
         @new_movie.title = movie.css(".unstyled").text.strip
          @new_movie.number = movie.css(".bold").text.strip
          @new_movie.rating = movie.css(".tMeterScore").text.strip
-            puts "#{@new_movie.number} #{@new_movie.title} #{@new_movie.rating}"
+            puts "#{@new_movie.number} #{@new_movie.title}"
            break if i == 3
            end
          end
